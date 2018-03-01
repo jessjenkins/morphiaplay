@@ -46,7 +46,7 @@ public class MorphiaPlayUpsert {
                 .build();
         datastore.save(r);
 
-        // Now save both using upserts. Notw bob will be updated but dave will be inserted.
+        // Now save both using upserts. Note bob will be updated but dave will be inserted.
         Stream.of(bobID,daveID).forEach(uuid -> {
 
             // Set up a query of what to go looking for.
