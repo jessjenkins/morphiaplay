@@ -23,7 +23,7 @@ public class MorphiaPlayUpsert {
 
         // Create the morphia boilerplate
         // With default options, this will connect to a locally running mongodb listening on 27017
-        // To spin up a server with docer simply run…
+        // To spin up a server with docker simply run…
         // `docker run --name jessmongo --publish 127.0.0.1:27017:27017 mongo`
         Morphia morphia = new Morphia();
 
