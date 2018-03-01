@@ -28,6 +28,7 @@ public class MorphiaPlayUpsert {
         Morphia morphia = new Morphia();
 
         // Map a data class with mophia
+        // Note, this is actually mapping all classes in the same package as 'Record' so includes 'SubRecord'
         morphia.mapPackage(Record.class.getPackage().getName());
 
         // Create a datastore with the name of the database we want to be created
