@@ -55,9 +55,9 @@ public class MorphiaPlayUpsert {
             Query<Record> query = datastore.createQuery(Record.class)
                 .field("recordId").equal(uuid);
 
-            // What fields to be created/updated (note the ones only set on inserts)
-            UpdateOperations<Record> ops;
-            ops = datastore.createUpdateOperations(Record.class)
+            // Which fields to be created/updated (note the ones only set on inserts)
+            UpdateOperations<Record> updateOperations;
+            updateOperations = datastore.createUpdateOperations(Record.class)
                     .set("recordId",uuid)
                     .setOnInsert("name", "Upserted");
 
@@ -67,7 +67,7 @@ public class MorphiaPlayUpsert {
             // Run the update
             UpdateResults updateResults = datastore.update(
                     query,
-                    ops,
+                    updateOperations,
                     updateOptions
             );
 
